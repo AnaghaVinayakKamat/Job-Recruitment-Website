@@ -11,7 +11,7 @@
             <li><a href="canprof">My Profile</a></li>
             <li><a href="resumetem">My Resume</a></li>
             <li><a href="jobsearch">Search jobs</a></li>
-            <li><a href="#">My Applications</a></li>
+            <li><a href="candapp">My Applications</a></li>
             <li><a href="candilogin">Logout</a></li>
     </ul>
     <div class="burger">
@@ -46,13 +46,14 @@
         {{u.summary}}
       </span>
     </div>
+    <hr style="border: 1.5px solid #111; border-radius: 5px; margin-top: 5px; margin-bottom: 5px;">  
   </div>
    <div class="details">
     <div class="section">
       <div class="section__title">Experience</div>
       {{u.workexp}}
-     
     </div>
+    <hr style="border: 1.5px solid #111; border-radius: 5px; margin-top: 5px; margin-bottom: 5px;">  
     <div class="section">
       <div class="section__title">Education</div>
       <div class="name"></div>
@@ -66,15 +67,13 @@
 
       <div class="name"></div>
       <div class="text"> {{u.sedu}} <br> </div>
-      
     </div>
+    <hr style="border: 1.5px solid #111; border-radius: 5px; margin-top: 5px; margin-bottom: 5px;">  
         <div class="section">
         <div class="section__title">Projects / Work Samples</div>
         <div class="text">{{u.pexp}}</div> 
       </div> 
-        
-      
-         
+      <hr style="border: 1.5px solid #111; border-radius: 5px; margin-top: 5px; margin-bottom: 5px;">  
          <div class="section">
        <div class="section__title">Skills</div>
        <div class="text-skills">
@@ -95,11 +94,12 @@
           </tr>
         </table>
        </div>
-     <br>
+       <hr style="border: 1.5px solid #111; border-radius: 5px; margin-top: 5px; margin-bottom: 5px;">  
      <div class="section__title">Achievements </div>
      <div class="text">{{u.achv}}</div>
      <br>
-     <div class="section__title">Hobbies </div>
+     <hr style="border: 1.5px solid #111; border-radius: 5px; margin-top: 5px; margin-bottom: 5px;">
+     <div class="section__title">Hobbies </div>  
      <div class="text-skills">
       <table>
         <tr>
@@ -122,6 +122,7 @@
      {% endfor %}
   </div>
 </div>
+<hr style="border: 1.5px solid #111; border-radius: 5px; margin-top: 5px; margin-bottom: 5px;">  
 <div class="download"><a href="getpdf">
   <button class="download" type="submit" id="download" name="download">Download</button></a>
 </div>
