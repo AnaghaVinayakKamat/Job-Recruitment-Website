@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/newnav.css">
+    <link rel="stylesheet" href="static/resp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>My Profile</title>
+</head>
+<body>
+        <nav class="navbar nav-height-resp">
+            <div class= "leftnav v-class-resp">RecruPortal</div>
+            <ul class="rightnav v-class-resp">
+                    <li><a href="canprof">My Profile</a></li>
+                    <li><a href="resumetem">My Resume</a></li>
+                    <li><a href="jobsearch">Search jobs</a></li>
+                    <li><a href="#">My Applications</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="#">More</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        <section class="profile">
+            {% if status %}
+                <div class="alert-primary">{{ status }}</div>
+                <a href="canprof">Go To Your Profile</a>
+            {% endif %}
+            <form method="POST">
+            {% csrf_token %}
+            {% for e in edet %}
+            <div class="profile">
+                <table cellspacing="40px" cellpadding="40px" class="profile-table">
+                    <tr>
+                        <td class="data">Name:</td>
+                        <td class="data"><input type="text" name="ename" value="{{ e.ename }}" required></td>
+                    </tr>
+                    <tr>
+                        <td class="data">Contact No.:</td>
+                        <td class="data"><input type="text" name="ephn" value="{{ e.ephn }}" required></td>
+                    </tr>
+                    <tr>
+                        <td class="data">Address:</td>
+                        <td class="data"><input type="text" name="eaddr" value="{{ e.eaddr }}" required></td>
+                    </tr>
+                    <tr>
+                        <td class="data">City:</td>
+                        <td class="data"><input type="text" name="ecity" value="{{ e.ecity }}" required></td>
+                    </tr>
+                    <tr>
+                        <td class="data">State:</td>
+                        <td class="data"><input type="text" name="estate" value="{{ e.estate }}" required></td>
+                    </tr>
+                    <tr>
+                        <td class="data">Zip:</td>
+                        <td class="data"><input type="text" name="ezip" value="{{ e.ezip }}" required></td>
+                    </tr>
+                    <tr>
+                        <td class="data">Gender:</td>
+                        <td class="data"><input type="text" name="egen" value="{{ e.egen }}" required></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="canprof">
+                <input type="submit" value="Update" class="create-edit-res">
+            </a>
+        </form>
+        {% endfor %}
+        </section>
+        <script src="static/responsive.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/newnav.css">    
+    <link rel="stylesheet" href="static/resp.css">
+    <link href="static/myjobs.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/72a5499c60.js" crossorigin="anonymous"></script>
+    <title>My Applications</title>
+</head>
+<body>
+        <nav class="navbar nav-height-resp">
+            <div class= "leftnav v-class-resp">RecruPortal</div>
+            <ul class="rightnav v-class-resp">
+                    <li><a href="canprof">My Profile</a></li>
+                    <li><a href="resumetem">My Resume</a></li>
+                    <li><a href="jobsearch">Search jobs</a></li>
+                    <li><a href="candapp">My Applications</a></li>
+                    <li><a href="candilogin">Logout</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        <section class="myjobs">
+            {% for a in applied %}
+            <table>
+                <tr><th colspan="5">Why should you be hired?</th></tr>
+                <tr><td colspan="5">{{ a.reason }}</td></tr>
+                <tr>
+                    <th>Job Position</th>
+                    <td class="jobheading" colspan="2">{{ a.job.jobpost }}</td>
+                    <th>Job Location</th>
+                    <td class="location">{{ a.job.location }}</td>
+                </tr>
+                <tr>
+                    <th>What is the job?</th>
+                    <td colspan="4">{{ a.job.jobdes }}</td>
+                </tr>
+                <tr>
+                    <th>Company Name</th>
+                    <th colspan="4">{{ a.job.cname }}</th>
+                </tr>
+                <tr>
+                    <th colspan="5">Job Skills Expected</th>
+                </tr>
+                <tr>
+                    <td>{{ a.job.jskill1 }}</td>
+                    <td>{{ a.job.jskill2 }}</td>
+                    <td>{{ a.job.jskill3 }}</td>
+                    <td>{{ a.job.jskill4 }}</td>
+                    <td>{{ a.job.jskill5 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ a.job.jskill6 }}</td>
+                    <td>{{ a.job.jskill7 }}</td>
+                    <td>{{ a.job.jskill8 }}</td>
+                    <td>{{ a.job.jskill9 }}</td>
+                    <td>{{ a.job.jskill10 }}</td>
+                </tr>
+                <tr>
+                    <th>Industry Experience</th>
+                    <td>{{ a.job.indexp }}</td>
+                    <td></td>
+                    <th>Working Days</th>
+                    <td>{{ a.job.workdays }} days</td>
+                </tr>
+                </tr>
+            </table>
+            <br><br><br>
+            {% endfor %}
+        </section>
+</body>
+</html>

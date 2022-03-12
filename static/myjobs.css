@@ -1,0 +1,19 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+table{
+    position: relative;
+    left: 180px;
+    top: 60px;
+}
+th, td, tr{
+    padding: 5px;
+}
+.fas, .search-btn-drp{
+    padding: 5px;
+    cursor: pointer;
+}
+.fa-trash{
+    color: #ff3300;
+}

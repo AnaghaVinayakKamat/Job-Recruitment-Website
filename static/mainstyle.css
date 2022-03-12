@@ -1,0 +1,422 @@
+/*element*/
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Poppins', sans-serif;
+}
+p{
+    text-align: center;
+    padding: 30px 30px;
+    font-size: 55px;
+    font-weight: bold;
+}
+body{
+    width: 100%;
+}
+h1{
+    text-align:center;
+    padding: 40px;
+}
+h2{
+    padding: 10px 0px;
+}
+h3{
+    padding-top: 20px;
+    text-align: center;
+}
+
+ /*classes*/
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    max-width: 100%;
+    height: 70px;
+    background-color: #4a4a4a
+}
+.navlist{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.navlist li{
+    list-style: none;
+    padding: 23px 30px;
+    font-size: 16px;
+    align-items: center;
+}
+.navlist li a{
+    text-decoration: none;
+    color: #fff;
+}
+.navlist li:hover{
+    background-color: #000;
+}
+.rightnav{
+    width: 50%;
+    text-align: right;
+}
+.rightnav a{
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    padding: 24px 30px;
+    font-size: 16px;
+}
+.rightnav a:hover{
+    background-color: #000;
+}
+.background{
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7) url("images/virtualbg.png");
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.first-section{
+    height: 150vh;
+}
+.box-main{
+    position: absolute;
+    top: 40%;
+    color: #fff;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 75%;
+    padding: 0px 200px;
+    max-width: 100%;
+}
+.textbig{
+    padding-top: 150px;
+    padding-bottom: 20px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.textsmall{
+    font-size: 20px;
+    text-justify: auto;
+}
+.secright{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 100%;
+    margin: auto;
+    padding: 60px 150px;
+}
+.paras{
+    padding: 0px 50px;
+    max-width: 100%;
+}
+.tag{
+    font-size: 40px;
+}
+.thumbnail img{
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+.secleft{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 100%;
+    margin: auto;
+    padding: 60px 150px;
+}
+.contact{
+    background-color: #ebeae9;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.heading {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+.burger {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 3%;
+    top: 15px;
+}
+.line{
+    width: 33px;
+    background-color: #fff;
+    height: 4px;
+    margin: 5px 3px;
+}
+.form-box{
+    height: 680px;
+    width: 380px;
+    background-color: #fff;
+    position: relative;
+    top: 80px;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 #111;
+    overflow: hidden;
+    align-items: center;
+}
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #b6adc5c9;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    left: 19%;
+}
+.input-group{
+    width: 100%;
+    top: 160px;
+    left: 156px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+    color: #111;
+}
+.input-field{
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width: 80%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right,  #93a5cf, #e4efe9);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.resume-form-box{
+     height: 1590px;
+     width: 980px;
+     background-color: #fff;
+     position: relative;
+     margin: auto;
+     padding: 5px;
+     overflow: hidden;
+     align-items: center; 
+     font-weight: bold;
+ }
+ .resume-input-group{
+     width: 100%;
+     top: 10px;
+     left: 100px;
+     position: relative;
+     width: 280px;
+     transition: .5s;
+     color: #111;
+ }
+ .resume-input-field{
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border: 3px solid #000;
+    outline: none;
+    background: transparent;
+}
+.resume-submit-btn{
+    padding:10px 0px;
+    margin: 10px 0px;
+    width: 150px;
+    height: 50px;
+    position:absolute;
+    left: 190px;
+    cursor:pointer;
+    background-color: #141414;
+    color:#fff;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 5px;
+}
+.resume-reset-btn{
+    padding:10px 0px;
+    margin: 10px 0px;
+    width: 150px;
+    height: 50px;
+    position:absolute;
+    left: 390px;
+    cursor:pointer;
+    background-color: #141414;
+    color:#fff;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 5px;
+}
+.resume-contact{
+    background-color: #ebeae9;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+}
+.profile{
+    position: relative;
+}
+.alert-warning{
+    height: 30px;
+    width: 100%;
+    background: #fffd6d;
+    border-radius: 5px;
+    color: #f3cb47;
+    padding-top: 5px;
+    text-align: center;
+}
+.alert{
+    height: auto;
+    width: 100%;
+    background: #dfafa6;
+    border-radius: 5px;
+    color: #e44343;
+    padding-top: 5px;
+    text-align: center;
+}
+.skills, .hobbies{
+    width: 810px;
+}
+ /*id*/
+#login{
+    left: 50px;
+}
+
+#register{
+    left: 50px;
+}
+#ename{
+    width: 75%;
+}
+#username{
+    width: 100%;
+}
+#eemail{
+    width: 82%;
+}
+#epasswd{
+    width: 100%;
+}
+#ephn{
+    width: 80%;
+}
+#edob{
+    width: 84%;   
+}
+#eaddr, #caddr{
+    width: 75.5%;
+}
+#ecity, #ccity{
+    width: 86.5%;
+}
+#estate, #cstate{
+    width: 83%;
+}
+#ezip, #czip{
+    width: 88.5%;
+}
+#egen{
+    width: 20%;
+}
+.fgtpasswd{
+    position: absolute;
+    left: 83px;
+}
+#btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,  #93a5cf, #e4efe9);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+#summary{
+    width:800px;
+    padding:0 0;
+    margin: 0 0;
+}
+#iedu, #dedu, #pedu, #sedu, #git, #lkdn{
+    width: 800px;
+}
+#workexp, #pexp, #achv, #eemail{
+   width:800px
+}
+#skills{
+    width:157px;
+}
+#hby{
+    width: 152px;
+}
+.form-box-fgt{
+    height: 250px;
+    width: 580px;
+    background-color: #fff;
+    position: relative;
+    top: 80px;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid #000;
+    align-items: center;
+}
+.input-group-fgt{
+    width: 100%;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    width: 280px;
+    color: #111;
+}
+.input-field-fgt{
+    width: 180px;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    background: transparent;
+}
+.fgt-btn{
+    position: relative;
+    left: 350px;
+    top: 70px;
+    height: 30px;
+    width: 150px;
+    background: #ffeb3b;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+}
+.fgt-btn:hover{
+    background: #ffc107;
+    cursor: pointer;
+}

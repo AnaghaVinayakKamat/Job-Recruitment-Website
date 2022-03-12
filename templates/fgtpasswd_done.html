@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/mainstyle.css">
+    <link rel="stylesheet" href="static/resp.css">
+    <title>Join Us</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            font-family: 'Poppins', sans-serif;
+        }
+        p{
+            text-align: center;
+            padding: 30px 30px;
+            font-size: 55px;
+            font-weight: bold;
+        }
+        body{
+            width: 100%;
+        }
+        .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    max-width: 100%;
+    height: 70px;
+    background-color: #4a4a4a
+}
+.navlist{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.navlist li{
+    list-style: none;
+    padding: 23px 30px;
+    font-size: 16px;
+    align-items: center;
+}
+.navlist li a{
+    text-decoration: none;
+    color: #fff;
+}
+.navlist li:hover{
+    background-color: #000;
+}
+.rightnav{
+    width: 50%;
+    text-align: right;
+}
+.rightnav a{
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    padding: 24px 30px;
+    font-size: 16px;
+}
+.rightnav a:hover{
+    background-color: #000;
+}
+.first-section{
+    height: 80vh;
+}
+.form-box-fgt{
+    height: 250px;
+    width: 580px;
+    background-color: #fff;
+    position: relative;
+    top: 80px;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid #000;
+    align-items: center;
+}
+.form-box-fgt{
+    padding:20px;
+}
+.contact{
+    background-color: #ebeae9;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <p>RecruPortal</p>
+    <nav class="navbar nav-height-resp">
+        <ul class="navlist v-class-resp">
+                <li><a href="\">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/candilogin">Login as Candidate</a></li>
+                <li><a href="http://127.0.0.1:8000/complogin">Login as Company</a></li>
+        </ul>
+        <div class="rightnav v-class-resp">
+                <a href="about">About Us</a>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <section class="first-section">
+        <div class="form-box-fgt">
+            <h1>Your password has been successfully updated. Login to your account.<br><br></h1>
+                <a href="http://127.0.0.1:8000/candilogin">Candidate Login</a> / <a href="http://127.0.0.1:8000/complogin">Company Login</a>
+        </div>
+    </section>
+    <section class="contact">
+        Contact Us
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+    <script src="static/responsive.js"></script>
+</body>
+</html>

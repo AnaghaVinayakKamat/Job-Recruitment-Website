@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>Job Recruitment Portal</title>
+            <link href="static/searchstyle.css" rel="stylesheet">
+            <link rel="stylesheet" href="static/newnav.css">
+    </head>
+    <style>
+        body {text-align:center}
+    </style>
+    <body>
+        <nav class="navbar nav-height-resp">
+            <div class= "leftnav v-class-resp">RecruPortal</div>
+            <ul class="rightnav v-class-resp">
+                    <li><a href="canprof">My Profile</a></li>
+                    <li><a href="resumetem">My Resume</a></li>
+                    <li><a href="jobsearch">Search jobs</a></li>
+                    <li><a href="candapp">My Applications</a></li>
+                    <li><a href="candilogin">Logout</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        <div class="header">
+        <form class="all_form" method="GET">
+            {% csrf_token %}
+            <h1> Find The Perfect Job For You</h1>
+            <div class="form-box">
+                <select name="jobpost" id="jobpost" class="search-field business">
+                    <option>Search Jobs Here</option>
+                    <option>.Net Developer</option>
+                    <option>Android Developer</option>
+                    <option>Artificial Intelligence Scientist</option>
+                    <option>Backend Developer</option>
+                    <option>Big Data Analyst</option>
+                    <option>Blockchain Developer</option>
+                    <option>Cyber Security Manager</option>
+                    <option>Data Scientist</option>
+                    <option>Data Analyst</option>
+                    <option>Database Administrator</option>
+                    <option>Front End Developer</option>
+                    <option>Full Stack Developer</option>
+                    <option>Game Developer</option>
+                    <option>IOT Developer</option>
+                    <option>IOS Developer</option>
+                    <option>Linux/Unix Expert</option>
+                    <option>Mobile App Developer</option>
+                    <option>Network Engineer</option>
+                    <option>Product Manager</option>
+                    <option>Software Developer</option>
+                    <option>Software Tester</option>
+                    <option>Software Engineer</option>
+                    <option>Supply Chain Manager</option>
+                    <option>Ecommerce Developer</option>
+                    <option>UI/UX Designer</option>
+                    <option>Web Developer</option>
+                </select>
+                <button class="search-btn drp" type="submit" value="Search">Search</button>
+            </div>
+        </form>
+        </div>
+        <section class="listjobs">
+
+            {% for j in jobs %}
+            <table class="joblist">
+                <tr>
+                    <th class="jobheading" colspan="4">{{ j.jobpost }}</th>
+                    <td class="location">{{ j.location }}</td>
+                </tr>
+                <tr>
+                    <td colspan="5">{{ j.jobdes }}</td>
+                </tr>
+                <tr>
+                    <th>{{ j.cname }}</th>
+                </tr>
+                <tr>
+                    <th colspan="5">Skills Expected</th>
+                </tr>
+                <tr>
+                    <td>{{ j.jskill1 }}</td>
+                    <td>{{ j.jskill2 }}</td>
+                    <td>{{ j.jskill3 }}</td>
+                    <td>{{ j.jskill4 }}</td>
+                    <td>{{ j.jskill5 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ j.jskill6 }}</td>
+                    <td>{{ j.jskill7 }}</td>
+                    <td>{{ j.jskill8 }}</td>
+                    <td>{{ j.jskill9 }}</td>
+                    <td>{{ j.jskill10 }}</td>
+                </tr>
+                <tr>
+                    <th>Industry Experience</th>
+                    <td>{{ j.indexp }}</td>
+                    <td></td>
+                    <th>Working Days</th>
+                    <td>{{ j.workdays }} days</td>
+                </tr>
+                <tr>
+                    <td colspan="4">{{ j.cemail }}</td>
+                    <td><a href="{% url 'apply' %}?jobid={{ j.jobid }}"><button class="search-btn drp" id="applyme">Apply for Job</button></a></td>
+                </tr>
+            </table>
+            <br><br><br>
+            {% endfor %}
+        </section>
+
+
+
+        <script src="static/responsive.js"></script>
+        <!-- <script>
+            // document.querySelectorAll('.search-btn').forEach(item => {
+            //     item.addEventListener('click', event => {
+            //     //handle click
+            //     document.querySelector('.bg-modal').style.display = 'flex';
+            //     })
+            // })
+            // document.querySelectorAll('.close').forEach(item => {
+            //     item.addEventListener('click', event => {
+            //     //handle click
+            //     document.querySelector('.bg-modal').style.display = 'none';
+            //     })
+            // })
+        </script> -->
+    </body>
+</html>

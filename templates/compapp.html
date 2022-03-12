@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/newnav.css">    
+    <link rel="stylesheet" href="static/resp.css">
+    <link href="static/myjobs.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/72a5499c60.js" crossorigin="anonymous"></script>
+    
+    <title>My Applications</title>
+</head>
+<body>
+        <nav class="navbar nav-height-resp">
+            <div class= "leftnav v-class-resp">RecruPortal</div>
+            <ul class="rightnav v-class-resp">
+                    <li><a href="compprof">My Profile</a></li>
+                    <li><a href="jobdet">Post Jobs</a></li>
+                    <li><a href="compjobs">My jobs</a></li>
+                    <li><a href="compapp">My Applications</a></li>
+                    <li><a href="complogin">Logout</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        <section class="myjobs">
+            {% if message %}
+            <br>
+            <div class="alert alert-danger" role="alert" style="height:auto">
+                <strong>{{message}}</strong>
+            </div>
+            {% endif %}
+            <br><br>
+            {% for a in applied %}
+            <table class="myapp">
+                <tr>
+                    <th>Job Position</th>
+                    <td class="jobheading" colspan="2">{{ a.job.jobpost }}</td>
+                    <th>Job Location</th>
+                    <td class="location">{{ a.job.location }}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Candidate Name</th>
+                    <th>Candidate Email</th>
+                    <th>Candidate Phone</th>
+                    <th>Candidate Resume</th>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ a.ename }}</td>
+                    <td>{{ a.username }}</td>
+                    <td>{{ a.ephn }}</td>
+                    <td><a href="{{ a.upload.url }}">{{ a.upload }}</a></td>
+                </tr>
+                <tr>
+                    <th>Why should I be hired?</th>
+                    <td colspan="4">{{ a.reason }}</td>
+                </tr>
+                <tr>
+                    <td colspan="5"><a href="{% url 'select' %}?jobappid={{ a.jobappid }}"><button type="submit" class="btn btn-warning">Give Decision</button></a></td>
+                </tr>
+            </table>
+            <br><br><br>
+            {% endfor %}
+        </section>
+</body>
+</html>

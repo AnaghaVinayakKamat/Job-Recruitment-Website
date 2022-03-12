@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/newnav.css">
+    <link rel="stylesheet" href="static/resp.css">
+    <script src="https://kit.fontawesome.com/72a5499c60.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>My Profile</title>
+</head>
+<body>
+    <nav class="navbar nav-height-resp">
+        <div class= "leftnav v-class-resp">RecruPortal</div>
+        <ul class="rightnav v-class-resp">
+                <li><a href="compprof">My Profile</a></li>
+                <li><a href="jobdet">Post jobs</a></li>
+                <li><a href="compjobs">My Jobs</a></li>
+                <li><a href="compapp">My Applications</a></li>
+                <li><a href="selected">Selected</a></li>
+                <li><a href="complogin">Logout</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <form class="select" method="POST">
+        {% csrf_token %}
+        <div class="form-box-select">
+            <input type="radio" name="decision" value=1 onclick="text(0)">&nbsp;I'm Selecting &nbsp; &nbsp;
+            <input type="radio" name="decision" value=0 onclick="text(1)">&nbsp;I'm Rejecting 
+            <br><br>
+            <div id="email-box" hidden> 
+                Enter your email through which notification must be sent: <br>
+                    <input type="email" name="cemail">
+                <div id="select" hidden>
+                    Schedule Date for the Interview: &nbsp; <input type="date" name="doi" id="date-control">&nbsp; &nbsp; <br><br>
+                    Schedule Time for the Interview: &nbsp; <input type="time" name="toi"><br><br>
+                    <input type="radio" name="location" value=1 onclick="text(2)">&nbsp;Job location &nbsp; &nbsp;
+            <input type="radio" name="location" value=0 onclick="text(3)">&nbsp;Online interview link 
+            <br>
+            <div id="offline" hidden>
+                <div class=offline>
+                    Share meeting location: &nbsp; <input type="text" name="aoi" placeholder="">
+                </div>
+            </div>
+            <div id="online" hidden>
+                <div class="online">
+                    Share meeting link: &nbsp; <input type="text" name="loi" placeholder="https://gmeet.com">
+                </div>
+            </div>
+                    <div class="btn-green"></div>
+                        <button type="submit" name="select" class="btn-success">Send email notification</button>
+                    </div>
+                <br>
+                <div id="reject" hidden>
+                    <div class="btn-red">
+                        <button type="submit" name="reject" class="btn-danger">Send email notification</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    
+    
+    <script language="JavaScript">
+
+        // disable past dates 
+
+        $(document).ready(function() {
+            var dtToday = new Date();
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year =  dtToday.getFullYear();
+            if (month < 10){
+                month = '0' + month.toString();
+            }               
+            if (day < 10){
+                day = '0' + day.toString();
+            }
+            var maxDate = year + '-' + month + '-' + day;
+            $('#date-control').attr('min', maxDate);
+        })
+
+        // onclick display elements
+
+        function text(x){
+            if (x == 0) {
+                document.getElementById("email-box").style.display = "block";
+                document.getElementById("select").style.display = "block";
+                document.getElementById("reject").style.display = "none";
+            }
+            else if (x==1) {
+                document.getElementById("email-box").style.display = "block";
+                document.getElementById("select").style.display = "none";
+                document.getElementById("reject").style.display = "block";
+            }
+            else if (x==2) {
+                document.getElementById("email-box").style.display = "block";
+                document.getElementById("online").style.display = "none";
+                document.getElementById("offline").style.display = "block";
+            }
+            else if (x==3) {
+                document.getElementById("email-box").style.display = "block";
+                document.getElementById("offline").style.display = "none";
+                document.getElementById("online").style.display = "block";
+            }
+            else {
+                return None;
+            }
+            return;
+        }
+    </script>
+</body>
+</html>

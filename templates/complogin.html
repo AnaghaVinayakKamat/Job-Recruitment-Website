@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/mainstyle.css">
+    <link rel="stylesheet" href="static/resp.css">
+    <title>Join Us</title>
+</head>
+<body>
+    <p>RecruPortal</p>
+    <nav class="navbar nav-height-resp">
+        <ul class="navlist v-class-resp">
+                <li><a href="\">Home</a></li>
+                <li><a href="candilogin">Login as Candidate</a></li>
+                <li><a href="complogin">Login as Company</a></li>
+        </ul>
+        <div class="rightnav v-class-resp">
+                <a href="about">About Us</a>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <section class="background first-section">
+        <div class="form-box">
+            <h3>Login to your account</h3>
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="comp_register()">New User</button>
+            </div>
+            <form id="login" class="input-group" action="/complogin" method="POST">
+            {% csrf_token %}
+            {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+            {% endif %}
+            <br>
+                Enter Email: <input type="text" name="cemail" class="input-field" required><br>
+                Enter Password: <input type="password" name="cpasswd" class="input-field" required><br><br>
+                <button class="submit-btn" type="submit">Login</button><br>
+                <a href="fgtpasswd" class="fgtpasswd" id="fgtpasswd"><i>forgot password?</i></a>
+            </form>
+        </div>
+    </section>
+    <section class="contact">
+        Contact Us
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+    <script src="static/responsive.js"></script>
+</body>
+</html>

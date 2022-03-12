@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/mainstyle.css">
+    <link rel="stylesheet" href="static/resp.css">
+    <title>Join Us</title>
+</head>
+<body>
+    <p>RecruPortal</p>
+    <nav class="navbar nav-height-resp">
+        <ul class="navlist v-class-resp">
+                <li><a href="\">Home</a></li>
+                <li><a href="#">Login as Candidate</a></li>
+                <li><a href="complogin">Login as Company</a></li>
+        </ul>
+        <div class="rightnav v-class-resp">
+                <a href="about">About Us</a>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <section class="background first-section">
+        <div class="form-box">
+            <h3>Join Us as Candidate</h3>
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Existing User</button>
+            </div>
+            <form  id="register" class="input-group" action="/candireg" method="POST">
+                {% csrf_token %}
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>{{error}}</strong>
+                </div>
+                {% endif %}
+                <br>
+                Name: <input type="text" class="input-field" placeholder="Full Name" name="ename" id="username" value="{{values.ename}}" required><br>
+                Email: <input type="text" class="input-field" placeholder="abc@gmail.com" name="username" id="username" value="{{values.username}}" required>
+                Password: <br>
+                <span style="color:#999191; font-size: 8px">password must contain minimum 8 charaters and maximum 16 characters</span> <br>
+                <input type="password" class="input-field" id="epasswd" name="epasswd" required><br>
+                Phone: <input type="number" id="ephn" class="input-field" placeholder="0123456789" name="ephn" value={{values.ephn}} required>
+                Address: <input type="text" class="input-field" id="eaddr" name="eaddr" value={{values.eaddr}} required><br>
+                City: <input type="text" class="input-field" id="ecity" name="ecity" value={{values.ecity}} required>
+                State: <select class="input-field" id="estate" name="estate" value={{values.estate}} required>
+                    <option selected>Choose...</option>
+                    <option>Andhra Pradesh</option>
+                    <option>Arunachal Pradesh</option>
+                    <option>Assam</option>
+                    <option>Bihar</option>
+                    <option>Chhattisgarh</option>
+                    <option>Goa</option>
+                    <option>Gujarat</option>
+                    <option>Haryana</option>
+                    <option>Himachal Pradesh</option>
+                    <option>Jharkhand</option>
+                    <option>Karnataka</option>
+                    <option>Kerala</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Maharashtra</option>
+                    <option>Manipur</option>
+                    <option>Meghalaya</option>
+                    <option>Mizoram</option>
+                    <option>Nagaland</option>
+                    <option>Odisha</option>
+                    <option>Punjab</option>
+                    <option>Rajasthan</option>
+                    <option>Sikkim</option>
+                    <option>Tamil Nadu</option>
+                    <option>Telangana</option>
+                    <option>Tripura</option>
+                    <option>Uttar Pradesh</option>
+                    <option>Uttarakhand</option>
+                    <option>West Bengal</option>
+                </select>
+                Zip: <input type="number" class="input-field" id="ezip" pattern="[0-9]{3}-[0-9]{3}" name="ezip" value={{values.ezip}} required><br>
+                Gender: <input type="radio" name="egen" value="male" id="egen"> Male 
+                <input type="radio" name="egen" value="female" id="egen"> Female<br><br>
+                <button class="submit-btn" type="submit" value="Register">Register</button>
+            </form>
+        </div>
+    </section>
+    <section class="contact">
+        Contact Us
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+    <script src="static/responsive.js"></script>
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/newnav.css">
+    <link rel="stylesheet" href="static/resp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Creaye your Resume here</title>
+</head>
+<body>
+    <nav class="navbar nav-height-resp">
+        <div class= "leftnav v-class-resp">RecruPortal</div>
+        <ul class="rightnav v-class-resp">
+                <li><a href="canprof">My Profile</a></li>
+                <li><a href="jobsearch">Search jobs</a></li>
+                <li><a href="#">My Applications</a></li>
+                <li><a href="candilogin">Logout</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <div class="resume-form-box">
+        <h1>Enter details for your resume here</h1>
+        <div class="alert alert-warning" role="alert" style="height:auto">
+            <strong>Please enter the same email that you used during registration</strong>
+        </div>
+        {% if error %}
+            <div class="alert alert-danger" role="alert" style="height:auto">
+                <strong>{{error}}</strong>
+            </div>
+        {% endif %}
+        <form  id="resume" class="resume-input-group" method="POST">
+            {% csrf_token %}
+            <h2>Self Details</h2>
+            Email: <input type="text", name="username", id="eemail", class="resume-input-field" value="{{value.username}}">
+            GitHub Profile: <input type="text", name="git", id="git", class="resume-input-field" value="{{value.git}}">
+            LinkedIn Profile: <input type="text", name="lkdn", id="lkdn", class="resume-input-field" value="{{value.lkdn}}">
+            Summary: <textarea name="summary", id="summary", class="resume-input-field", placeholder="max 500 words" rows="8" cols="1" required>{{value.summary}}</textarea>
+            <h2>Education Details:</h2>
+            Enter Name of the Institution:
+            <input type="text", name="iedu", id="iedu", class="resume-input-field" placeholder="highest education institute     e.g Mumbai University" value="{{value.iedu}}">
+            Enter your Education Degree Type:
+            <input type="text", name="dedu", id="dedu", class="resume-input-field" placeholder="Highest education degree       e.g Masters in Information Technology" value="{{value.dedu}}">
+            Enter your passing year:
+            <input type="text", name="pedu", id="pedu", class="resume-input-field" placeholder="highest education passing year      e.g 2021" value="{{value.pedu}}">
+            Enter your scores:
+            <input type="text", name="sedu", id="sedu", class="resume-input-field" placeholder="highest education passing scores      e.g 9/10 cgpa" value="{{value.sedu}}">
+            <h2>Professional Details</h2>
+            Enter your work experience:
+            <select name="workexp", id="workexp", class="resume-input-field" required>
+                {% if value %}
+                <option>{{value.workexp}}</option>
+                {% endif %}
+                <option>0-3 years</option>
+                <option>3-6 years</option>
+                <option>6-10 years</option>
+                <option>Over 10 years</option>
+            </select>
+            Enter your skills(max 10):<br>
+            <div class="skills">
+            <select name="skill1", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill1}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill2", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill2}}</option>
+                {% endif %}
+                <option></option>
+                <option>Choose...</option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill3", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill3}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill4", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill4}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill5", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill5}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill6", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill6}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill7", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill7}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill8", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill8}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill9", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill9}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select>
+            <select name="skill10", id="skills", class="resume-input-field">
+                {% if value %}
+                <option>{{value.skill10}}</option>
+                {% endif %}
+                <option></option>
+                <option>.Net Development</option>
+                <option>Analytics</option>
+                <option>Android App Development</option>
+                <option>Angular JS</option>
+                <option>Artificial Intelligence</option>
+                <option>ASP.Net Development</option>
+                <option>Backend Development</option>
+                <option>Big Data</option>
+                <option>Bioinformatics</option>
+                <option>Blockchain Development</option>
+                <option>Cloud Computing</option>
+                <option>Computer</option>
+                <option>Computer Vision</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+                <option>Database Design</option>
+                <option>Django</option>
+                <option>Embedded Systems</option>
+                <option>Express JS</option>
+                <option>Flutter Development</option>
+                <option>Flask Development</option>
+                <option>Front End Development</option>
+                <option>Full Stack Development</option>
+                <option>Game Development</option>
+                <option>Image Processing</option>
+                <option>Information Technology</option>
+                <option>IOT</option>
+                <option>IOS Development</option>
+                <option>Java Development</option>
+                <option>Javascript Development</option>
+                <option>LAMP Stack</option>
+                <option>Linux/Unix</option>
+                <option>Machine Learning</option>
+                <option>Mobile App Development</option>
+                <option>MERN Stack</option>
+                <option>MEAN Stack</option>
+                <option>MongoDB</option>
+                <option>MySQL</option>
+                <option>Node JS</option>
+                <option>Network Engineering</option>
+                <option>Oracle</option>
+                <option>PHP Development</option>
+                <option>Python Development</option>
+                <option>Programming</option>
+                <option>Product Management</option>
+                <option>Ruby on Rails</option>
+                <option>React JS</option>
+                <option>Software Development</option>
+                <option>Software Testing</option>
+                <option>SDLC</option>
+                <option>Supply Chain Management</option>
+                <option>Statistics</option>
+                <option>Springboot</option>
+                <option>Shopify Development</option>
+                <option>UI/UX Design</option>
+                <option>Web Development</option>
+                <option>WordPress Development</option>
+                <option>Wix Development</option>
+                <option>XML Development</option>
+            </select></div><br>
+            Work Samples:
+            <input type="text", id="pexp", name="pexp", class="resume-input-field" placeholder="store the sample in gdrive and share the link here" value="{{value.pexp}}">
+            Achievements:
+            <input type="text", id="achv", name="achv", class="resume-input-field" placeholder="store the sample in gdrive and share the link here" value="{{value.achv}}"><br>
+            <h2>Hobbies</h2>
+            <div class="hobbies">
+                <input type="text", id="hby", name="hby1", class="resume-input-field" value="{{value.hby1}}">
+                <input type="text", id="hby", name="hby2", class="resume-input-field" value="{{value.hby2}}">
+                <input type="text", id="hby", name="hby3", class="resume-input-field" value="{{value.hby3}}">
+                <input type="text", id="hby", name="hby4", class="resume-input-field" value="{{value.hby4}}">
+                <input type="text", id="hby", name="hby5", class="resume-input-field" value="{{value.hby5}}">
+                <input type="text", id="hby", name="hby6", class="resume-input-field" value="{{value.hby6}}">
+                <input type="text", id="hby", name="hby7", class="resume-input-field" value="{{value.hby7}}">
+                <input type="text", id="hby", name="hby8", class="resume-input-field" value="{{value.hby8}}">
+                <input type="text", id="hby", name="hby9", class="resume-input-field" value="{{value.hby9}}">
+                <input type="text", id="hby", name="hby10", class="resume-input-field" value="{{value.hby10}}">
+            </div><br>
+            <button class="resume-submit-btn" type="submit">Create Resume</button>  
+            <button class="resume-reset-btn" type="reset">Reset Resume</button><br>
+        </form>
+        </div>
+</section>
+<section class="resume-contact">
+    Contact Us
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+<script src="static/responsive.js"></script>
+</body>
+</html>

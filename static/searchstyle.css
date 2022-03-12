@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.header
+{
+    height: 100vh;
+    background: rgba(0,0,0,0.7) url("images/image.png");
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+h1
+{
+    text-align: center;
+    color: #fff;
+    font-size: 45px;
+    letter-spacing: 2px;
+}
+.search-field
+{
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+.business
+{
+    width: 250px;
+    height: 40px;
+}
+.location
+{
+    width: 200px;
+    height: 40px;
+}
+.days{
+    width: 400px;
+    height: 40px;
+}
+.drp{
+    width: 100px;
+    height: 40px;
+}
+.search-btn
+{
+    height: 40px;
+    width: 150px;
+    background: #ffeb3b;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+}
+.search-btn:hover
+{
+    background: #ffc107;
+    cursor: pointer;
+}
+.form-box
+{
+    padding: 30px;
+}
+.all_form{
+    position: absolute;
+    top: 100px;
+}
+.search-field{
+    color: #111;
+}
+.worktext{
+    color: #fff;
+}
+.listjobs{
+    position: relative;
+    top: 80px;
+    left: 10%
+}
+table{
+    width: 80%;
+    background-color: #f2fcf8;
+    border: 1px solid #111;
+}
+.location{
+    border-bottom: 1px solid #938d8d;
+}
+tr, td, th{
+    padding: 5px;
+    text-align: left;
+    justify-content: space-between;
+}
+.jobheading{
+    font-size: 30px;
+    border-bottom: 1px solid #938d8d;
+}
+th{
+    font-size: 20px;
+}
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content{
+    width:500px;
+    height:300px;
+    background-color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.alert-warning{
+    background-color: #fffda0;
+    color: #d1ac09;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+}
+#applyemail{
+    border: none;
+    border-bottom: 1px solid #111;
+    padding: 5px; 
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 2%;
+    font-size: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+#jobpost{
+    width: 500px;
+}

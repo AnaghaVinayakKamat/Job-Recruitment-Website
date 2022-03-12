@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Post Jobs</title>
+        <link rel="stylesheet" href="static/newnav.css">
+        <link rel="stylesheet" href="static/resp.css">
+        <meta name="viewport" content="width-device-width , initial-scale=1.0" >
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+        
+
+    </head>
+    <body>
+        <nav class="navbar nav-height-resp">
+            <div class= "leftnav v-class-resp">RecruPortal</div>
+            <ul class="rightnav v-class-resp">
+                    <li><a href="compprof">My Profile</a></li>
+                    <li><a href="jobdet">Post jobs</a></li>
+                    <li><a href="compjobs">My Jobs</a></li>
+                    <li><a href="compapp">Applied Candidates</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="complogin">Logout</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        {% if status %}
+            <div class="alert-primary">{{ status }}</div>
+            <a href="compjobs">Go To My Jobs</a>
+        {% endif %}
+        <div class="container-fuild" style="margin-top: 100px;">
+             <div class="row">
+                <div class="col-md-10 offset-md-1">
+                     <div class="card">
+                         <div class="card-header">
+                                 <h3><b>JOB DETAILS</b></h3>
+                                </div>
+                                 <div class="card-body">
+                                     <form action="/jobdet" method="POST">
+                                        {% for j in jobs %}
+                                         {% csrf_token %}
+                
+                                                    <label for="jobpost">Job Position</label>
+                                                    <select name="jobpost", id="jobpost", class="resume-input-field">
+                                                        <option></option>
+                                                        <option>.Net Developer</option>
+                                                        <option>Android Developer</option>
+                                                        <option>Artificial Intelligence Scientist</option>
+                                                        <option>Backend Developer</option>
+                                                        <option>Big Data Analyst</option>
+                                                        <option>Blockchain Developer</option>
+                                                        <option>Cyber Security Manager</option>
+                                                        <option>Data Scientist</option>
+                                                        <option>Data Analyst</option>
+                                                        <option>Database Administrator</option>
+                                                        <option>Front End Developer</option>
+                                                        <option>Full Stack Developer</option>
+                                                        <option>Game Developer</option>
+                                                        <option>IOT Developer</option>
+                                                        <option>IOS Developer</option>
+                                                        <option>Linux/Unix Expert</option>
+                                                        <option>Mobile App Developer</option>
+                                                        <option>Network Engineer</option>
+                                                        <option>Product Manager</option>
+                                                        <option>Software Developer</option>
+                                                        <option>Software Tester</option>
+                                                        <option>Software Engineer</option>
+                                                        <option>Supply Chain Manager</option>
+                                                        <option>Ecommerce Developer</option>
+                                                        <option>UI/UX Designer</option>
+                                                        <option>Web Developer</option>
+                                                    </select>
+                                                <span id="available"></span>
+                                                    <br>  <br>
+                                                    
+                                        <label for="jobdes">Job Description</label>
+                                        <textarea class="form-control" name="jobdes" id="jobdes" cols="30" rows="4">{{ j.jobdes }}</textarea>
+                                        <span id="available"></span>
+                                        <br> <br>
+
+                                    <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">  
+                                                    <label for="exp">Enter expected work experience:</label>
+                                                    <select class="form-control" id="exp" name=indexp required>
+                                                        <option>{{ j.indexp }}</option>
+                                                        <option>0-3 years</option>
+                                                        <option>3-6 years</option>
+                                                        <option>6-10 years</option>
+                                                        <option>Over 10 years</option>
+                                                    </select>
+                                                </div>
+ 
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exp">Total working days:</label><br><br>
+                                                    <select class="form-control" id="workdays" name="workdays" style="border: 3px solid #111">
+                                                        <option>{{ j.workdays }}</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                        </div>
+
+                                        <br> <br>          
+                     Enter your skills(max 10):<br>
+                <select name="jskill1", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill2", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>Choose...</option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill3", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill4", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill5", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill6", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill7", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill8", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill9", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select>
+                <select name="jskill10", id="jskills", class="resume-input-field">
+                    <option></option>
+                    <option>.Net Development</option>
+                    <option>Analytics</option>
+                    <option>Android App Development</option>
+                    <option>Angular JS</option>
+                    <option>Artificial Intelligence</option>
+                    <option>ASP.Net Development</option>
+                    <option>Backend Development</option>
+                    <option>Big Data</option>
+                    <option>Bioinformatics</option>
+                    <option>Blockchain Development</option>
+                    <option>Cloud Computing</option>
+                    <option>Computer</option>
+                    <option>Computer Vision</option>
+                    <option>Cyber Security</option>
+                    <option>Data Science</option>
+                    <option>Data Analytics</option>
+                    <option>Database Design</option>
+                    <option>Django</option>
+                    <option>Embedded Systems</option>
+                    <option>Express JS</option>
+                    <option>Flutter Development</option>
+                    <option>Flask Development</option>
+                    <option>Front End Development</option>
+                    <option>Full Stack Development</option>
+                    <option>Game Development</option>
+                    <option>Image Processing</option>
+                    <option>Information Technology</option>
+                    <option>IOT</option>
+                    <option>IOS Development</option>
+                    <option>Java Development</option>
+                    <option>Javascript Development</option>
+                    <option>LAMP Stack</option>
+                    <option>Linux/Unix</option>
+                    <option>Machine Learning</option>
+                    <option>Mobile App Development</option>
+                    <option>MERN Stack</option>
+                    <option>MEAN Stack</option>
+                    <option>MongoDB</option>
+                    <option>MySQL</option>
+                    <option>Node JS</option>
+                    <option>Network Engineering</option>
+                    <option>Oracle</option>
+                    <option>PHP Development</option>
+                    <option>Python Development</option>
+                    <option>Programming</option>
+                    <option>Product Management</option>
+                    <option>Ruby on Rails</option>
+                    <option>React JS</option>
+                    <option>Software Development</option>
+                    <option>Software Testing</option>
+                    <option>SDLC</option>
+                    <option>Supply Chain Management</option>
+                    <option>Statistics</option>
+                    <option>Springboot</option>
+                    <option>Shopify Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>WordPress Development</option>
+                    <option>Wix Development</option>
+                    <option>XML Development</option>
+                </select><br>  <br>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="row">
+                            <div class="col-md-6">  
+                                Salary:
+                                <input type="text" class="input-field" id="salary" name="salary" required>
+                            </div>
+                       
+                        <div class="col-md-6">
+                            <div class="form-group">  
+                            Location: <select class="input-field" id="cstate" name="location" required>
+                            <option selected>Choose...</option>
+                            <option>Andhra Pradesh</option>
+                            <option>Arunachal Pradesh</option>
+                            <option>Assam</option>
+                            <option>Bihar</option>
+                            <option>Chhattisgarh</option>
+                            <option>Goa</option>
+                            <option>Gujarat</option>
+                            <option>Haryana</option>
+                            <option>Himachal Pradesh</option>
+                            <option>Jharkhand</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Madhya Pradesh</option>
+                            <option>Maharashtra</option>
+                            <option>Manipur</option>
+                            <option>Meghalaya</option>
+                            <option>Mizoram</option>
+                            <option>Nagaland</option>
+                            <option>Odisha</option>
+                            <option>Punjab</option>
+                            <option>Rajasthan</option>
+                            <option>Sikkim</option>
+                            <option>Tamil Nadu</option>
+                            <option>Telangana</option>
+                            <option>Tripura</option>
+                            <option>Uttar Pradesh</option>
+                            <option>Uttarakhand</option>
+                            <option>West Bengal</option>
+                    </select>
+                    </div>
+                </div> 
+                <button class="job_submit" id="job_submit">Update Job Details</button>
+                {% endfor %}
+                </form>
+                </div>  
+                </div>
+                </div> 
+             </div>   
+        </div> 
+    </body>    
+</html>

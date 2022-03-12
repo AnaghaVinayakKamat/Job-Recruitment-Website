@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/newnav.css">
+    <link rel="stylesheet" href="static/resp.css">
+    <script src="https://kit.fontawesome.com/72a5499c60.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>My Profile</title>
+</head>
+<body>
+        <nav class="navbar nav-height-resp">
+            <div class= "leftnav v-class-resp">RecruPortal</div>
+            <ul class="rightnav v-class-resp">
+                    <li><a href="compprof">My Profile</a></li>
+                    <li><a href="jobdet">Post jobs</a></li>
+                    <li><a href="compjobs">My Jobs</a></li>
+                    <li><a href="compapp">Applied Candidates</a></li>
+                    <li><a href="complogin">Logout</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+<section class="profile">
+    <table class="myjobs">
+        <tr>
+            <th>Job Position</th>
+            <th>Job Description</th>
+            <th>Industry Experience</th>
+            <th>Working Days</th>
+            <th>Skills</th>
+            <th>Salary</th>
+            <th>Location</th>
+        </tr>
+            {% for j in jobs %}
+            <tr>
+                <td> {{ j.jobpost }} </td>
+                <td> {{ j.jobdes }} </td>
+                <td> {{ j.indexp }} </td>
+                <td> {{ j.workdays }} </td>
+                <td id="jskill">  
+                    {{ j.jskill1 }}<br>
+                    {{ j.jskill2 }}<br>
+                    {{ j.jskill3 }}<br>
+                    {{ j.jskill4 }}<br>
+                    {{ j.jskill5 }}<br>
+                    {{ j.jskill6 }}<br>
+                    {{ j.jskill7 }}<br>
+                    {{ j.jskill8 }}<br>
+                    {{ j.jskill9 }}<br>
+                    {{ j.jskill10 }}<br>
+                </td>
+                <td>{{ j.salary }}</td>
+                <td> {{ j.location }} </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+        <script src="static/responsive.js"></script>
+</body>
+</html>

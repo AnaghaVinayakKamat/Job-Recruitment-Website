@@ -1,0 +1,322 @@
+*{
+   padding: 0%;
+   margin: 0%;
+   font-family: 'Poppins', sans-serif;
+}
+p{
+   text-align: center;
+   padding: 30px 30px;
+   font-size: 55px;
+   font-weight: bold;
+}
+body{
+   width: 100%;
+}
+h1{
+   text-align:center;
+   padding: 40px;
+}
+h2{
+   padding: 10px 0px;
+}
+h3{
+   padding-top: 20px;
+   text-align: center;
+}
+
+/*classes*/
+.navbar{
+   display: flex;
+   align-items: center;
+   justify-content: right;
+   max-width: 100%;
+   height: 70px;
+   background-color: #4a4a4a;
+}
+.rightnav{
+   width: 80%;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   justify-content: right;
+}
+.rightnav li{
+   list-style: none;
+   padding: 23px 30px;
+   font-size: 16px;
+   align-items: center;
+}
+.rightnav li a{
+   text-decoration: none;
+   color: #fff;
+}
+.rightnav li:hover{
+   background-color: #000;
+}
+.leftnav{
+   width: 20%;
+   text-align: left;
+   color: #fff;
+   padding: 20px;
+   font-size: 24px;
+   font-weight: 800;
+}
+.profile-table{
+   border: 3px solid #111;
+   position: relative;
+   top: 80px;
+   left: 80px;
+   padding: 10px;
+   margin: 50px;
+}
+.data{
+   border: 1px solid #111;
+   padding: 10px 10px;
+}
+.create-edit-res{
+   position: absolute;
+   left: 1000px;
+   width: 150px;
+   padding: 20px;
+   margin: 20px;
+   background: #343a40;
+   color: #fff;
+   font-weight: 600;
+   cursor: pointer;
+}
+.btn1{
+   top: 250px;
+}
+.btn2{
+   top: 350px;
+}
+.btn3{
+   top: 450px;
+}
+.resume-form-box{
+   height: 1690px;
+   width: 980px;
+   background-color: #fff;
+   position: relative;
+   margin: auto;
+   padding: 5px;
+   overflow: hidden;
+   align-items: center; 
+   font-weight: bold;
+}
+.resume-input-group{
+   width: 100%;
+   top: 10px;
+   left: 100px;
+   position: relative;
+   width: 280px;
+   transition: .5s;
+   color: #111;
+}
+.resume-input-field{
+  width: 100%;
+  padding: 5px 0;
+  margin: 5px 0;
+  border: 3px solid #000;
+  outline: none;
+  background: transparent;
+}
+.resume-submit-btn{
+  padding:10px 0px;
+  margin: 10px 0px;
+  width: 150px;
+  height: 50px;
+  position:absolute;
+  left: 190px;
+  cursor:pointer;
+  background-color: #141414;
+  color:#fff;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 5px;
+}
+.resume-reset-btn{
+  padding:10px 0px;
+  margin: 10px 0px;
+  width: 150px;
+  height: 50px;
+  position:absolute;
+  left: 390px;
+  cursor:pointer;
+  background-color: #141414;
+  color:#fff;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 5px;
+}
+.resume-contact{
+  background-color: #ebeae9;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  top: 10px;
+}
+.profile{
+  position: relative;
+  top: 20px;
+}
+.alert{
+  height: 30px;
+  width: 100%;
+  background: #f8c4b7;
+  border-radius: 5px;
+  color: #e44343;
+  padding-top: 5px;
+  text-align: center;
+}
+.alert-warning{
+  height: 30px;
+  width: 100%;
+  background: #f3eb73;
+  border-radius: 5px;
+  color: #e44343;
+  padding-top: 5px;
+  text-align: center;
+}
+.skills, .hobbies{
+  width: 810px;
+}
+/*id*/
+#login{
+  left: 50px;
+}
+
+#register{
+  left: 50px;
+}
+#ename, #cname{
+  width: 75%;
+}
+#username{
+  width: 100%;
+}
+#eemail, #cemail{
+  width: 82%;
+}
+#epasswd, #cpasswd{
+  width: 71.5%;
+}
+#ephn, #cphn{
+  width: 80%;
+}
+#edob{
+  width: 84%;   
+}
+#eaddr, #caddr{
+  width: 75.5%;
+}
+#ecity, #ccity{
+  width: 86.5%;
+}
+#estate, #cstate{
+  width: 83%;
+}
+#ezip, #czip{
+  width: 88.5%;
+}
+#egen{
+  width: 20%;
+}
+.fgtpasswd{
+  position: absolute;
+  left: 83px;
+}
+#btn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,  #93a5cf, #e4efe9);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+#summary{
+  width:800px;
+  padding:0 0;
+  margin: 0 0;
+}
+#iedu, #dedu, #pedu, #sedu, #git, #lkdn{
+  width: 800px;
+}
+#workexp, #pexp, #achv, #eemail{
+ width:800px
+}
+#skills{
+  width: 157px;
+}
+#jskills{
+  width:195px;
+}
+#hby{
+  width: 152px;
+}
+#cemail, #cname{
+  width: 100%;
+  height: 34px;
+}
+#jobdes, #cemail, #exp, #salary, #cstate, #reason{
+  border: 3px solid #111;
+}
+#cstate{
+  height: 30px;
+}
+#job_submit{
+  height: 50px;
+  width: 200px;
+  position: relative;
+  top: 20px;
+  left: 400px;
+  background-color: #ffe200;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.profile{
+  position: relative;
+  top: 20px;
+  left: 23px;
+}
+table{
+  border: 1px solid #111;
+}
+th, td{
+  border: 1px solid #111;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 170px;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn-table{
+   border: 0px;
+   margin: 0px;
+}
+.apply{
+  padding-left:70px;
+  width:90%;
+}
+.search-btn
+{
+  height: 40px;
+  width: 150px;
+  background: #ffeb3b;
+  border: none;
+  color: #000;
+  border-radius: 25px;
+}
+.search-btn:hover
+{
+    background: #ffc107;
+    cursor: pointer;
+}
+.myapp{
+  width: 70%;
+}

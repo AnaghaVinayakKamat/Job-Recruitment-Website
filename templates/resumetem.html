@@ -1,0 +1,138 @@
+<html>
+<head>
+  <title>Download Resume</title>
+    <link href="static/restemstyle.css" rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/72a5499c60.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar nav-height-resp">
+    <div class= "leftnav v-class-resp">RecruPortal</div>
+    <ul class="rightnav v-class-resp">
+            <li><a href="canprof">My Profile</a></li>
+            <li><a href="resumetem">My Resume</a></li>
+            <li><a href="jobsearch">Search jobs</a></li>
+            <li><a href="#">My Applications</a></li>
+            <li><a href="candilogin">Logout</a></li>
+    </ul>
+    <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+<div class="container">
+  <div class="header">
+    {% for e in emp_det %}
+    <div class="full-name">
+      <span class="first-name">{{e.ename}}</span> 
+    </div>
+    <div class="contact-info">
+      <span class="email">Email: </span>
+      <span class="email-val">{{e.username}}</span>
+      <span class="separator"></span>
+      <span class="phone">Phone: </span>
+      <span class="phone-val">{{e.ephn}}</span><br>
+    {% endfor %}
+      {% for u in user_det %}
+      <span class="lkdn"><i class="fab fa-linkedin"></i> </span>
+      <span class="phone-val">{{u.lkdn}}</span><br>
+      <span class="git"><i class="fab fa-github"></i> </span>
+      <span class="phone-val">{{u.git}}</span>
+    </div>
+    <div class="about">
+      <span class="position">Summary</span><br>
+      <div class="desc">
+        {{u.summary}}
+      </span>
+    </div>
+  </div>
+   <div class="details">
+    <div class="section">
+      <div class="section__title">Experience</div>
+      {{u.workexp}}
+     
+    </div>
+    <div class="section">
+      <div class="section__title">Education</div>
+      <div class="name"></div>
+      <div class="text">{{u.iedu}} <br></div>
+      
+      <div class="name"></div>
+      <div class="text"> {{u.dedu}} <br> </div>
+
+      <div class="name"></div>
+      <div class="text"> {{u.pedu}} <br> </div>
+
+      <div class="name"></div>
+      <div class="text"> {{u.sedu}} <br> </div>
+      
+    </div>
+        <div class="section">
+        <div class="section__title">Projects / Work Samples</div>
+        <div class="text">{{u.pexp}}</div> 
+      </div> 
+        
+      
+         
+         <div class="section">
+       <div class="section__title">Skills</div>
+       <div class="text-skills">
+        <table>
+          <tr>
+            <td class="skill-table">{{u.skill1}}</td>
+            <td class="skill-table">{{u.skill2}}</td>
+            <td class="skill-table">{{u.skill3}}</td>
+            <td class="skill-table">{{u.skill4}}</td>
+            <td class="skill-table">{{u.skill5}}</td>
+          </tr>
+          <tr>
+            <td class="skill-table">{{u.skill6}}</td>
+            <td class="skill-table">{{u.skill7}}</td>
+            <td class="skill-table">{{u.skill8}}</td>
+            <td class="skill-table">{{u.skill9}}</td>
+            <td class="skill-table">{{u.skill10}}</td>
+          </tr>
+        </table>
+       </div>
+     <br>
+     <div class="section__title">Achievements </div>
+     <div class="text">{{u.achv}}</div>
+     <br>
+     <div class="section__title">Hobbies </div>
+     <div class="text-skills">
+      <table>
+        <tr>
+          <td class="skill-table">{{u.hby1}}</td>
+          <td class="skill-table">{{u.hby2}}</td>
+          <td class="skill-table">{{u.hby3}}</td>
+          <td class="skill-table">{{u.hby4}}</td>
+          <td class="skill-table">{{u.hby5}}</td>
+        </tr>
+        <tr>
+          <td class="skill-table">{{u.hby6}}</td>
+          <td class="skill-table">{{u.hby7}}</td>
+          <td class="skill-table">{{u.hby8}}</td>
+          <td class="skill-table">{{u.hby9}}</td>
+          <td class="skill-table">{{u.hby10}}</td>
+        </tr>
+      </table>
+     </div>
+     <br>
+     {% endfor %}
+  </div>
+</div>
+<div class="download"><a href="getpdf">
+  <button class="download" type="submit" id="download" name="download">Download</button></a>
+</div>
+<div class="download"><a href="resumeform_update">
+  <button class="download" type="submit" id="download" name="Edit">Edit</button></a>
+</div>
+<form action="{% url 'resume_delete' %}" method="POST">
+  {% csrf_token %}
+  <a href="canprof">
+    <input type="submit" value="Delete Resume" class="create-edit-res btn3"><br>
+  </a>
+</form>
+</body>
+</html>

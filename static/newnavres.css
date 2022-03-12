@@ -1,0 +1,39 @@
+@media only screen and (max-width: 1140px) {
+    p{
+        font-size: 20px;
+        padding: 10px 10px;
+    }
+    .navlist{
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar{
+        flex-direction: column;
+        height: 30%;
+        padding: 0px 0px;
+        transition: all 0.7s ease-in-out;
+        height: 200px;
+    }
+    .navlist li{
+        padding: 15px 10px;
+    }
+    .rightnav{
+        text-align:center;
+    }
+    .rightnav a{
+        text-align: center;
+        padding: 15px 10px;
+    }
+    .burger{
+        display: block;
+        position: absolute;
+        top: 60px;
+    }
+    .nav-height-resp{
+        height: 70px;
+    }
+    .v-class-resp{
+        opacity: 0;
+    }
+    
+}
