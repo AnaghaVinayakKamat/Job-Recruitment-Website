@@ -3,14 +3,6 @@ from django.db import models
 import uuid
 from django.db.models.fields import UUIDField
 
-# Create your models here.
-
-# class BaseModel(models.Model):
-#     id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True, primary_key=True)
-#     # when we don't want to display the class in table and only use as parent class use this
-#     class Meta:
-#         abstract=True
-
 #candidate registration
 class Can_det(models.Model):
     ename=models.CharField(max_length=50, default=None)
